@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<meta charset="UTF-8">
+	<title>jq.carousel</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, maximum-scale=1.0">
+	<link rel="stylesheet" href="styles/style.css">
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-4011945-9']);
+	  _gaq.push(['_trackPageview']);
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+</html>
+<body>
+
+<a href="https://github.com/5509/jq.carousel"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a><div class="cont">
+
+
+
+	
+
+	<section id="usage">
+		
+
+	<section id="sample">
+
+
+		<div class="carousel">
+			<div id="carousel_9" class="carousel_inner">
+				<div class="carousel_box">1</div>
+				<div class="carousel_box">2</div>
+				<div class="carousel_box">3</div>
+				<div class="carousel_box">4</div>
+				<div class="carousel_box">5</div>
+				
+			</div>
+			<p class="btns">
+				<input type="button" id="carousel_9_prev" value="prev">
+				<input type="button" id="carousel_9_next" value="next">
+			</p>
+		</div>
+
+</div>
+
+
+
+
+<script src="scripts/lib/jquery-1.7.1.min.js"></script>
+<script src="scripts/jq.carousel.js"></script>
+
+
+<script>
+
+(function() {
+	var $carousel = $('#carousel_9').carousel({
+		vertical: true
+	});
+
+	$('#carousel_9_prev').on('click', function(ev) {
+		ev.preventDefault();
+		$carousel.carousel('prev');
+	});
+	$('#carousel_9_next').on('click', function(ev) {
+		ev.preventDefault();
+		$carousel.carousel('next');
+	});
+
+	var items = $('.carousel_box').length;
+	console.log(items);
+
+	if ( items <= 12) {
+		$(".btns").css("display", "none");
+		$carousel.carousel('reset', {
+    loop: false
+  });
+
+	};
+	var heightItem = $('#carousel_9').height()
+	console.log(heightItem);
+
+/*	if ( items <= 4) {
+		$(".btns").css("display", "none");
+	};*/
+
+
+	/*if ( items >= 9) {
+		$("#carousel_9").css("height", "451px");
+	}else {
+			$("#carousel_9").css("height", "604px");
+	};
+
+	if ( items <= 6) {
+		$("#carousel_9").css("height", "300px");
+	}else {
+			$("#carousel_9").css("height", "604px");
+	};*/
+
+/*	if ( items <= 3) {
+		$("#carousel_9").css("height", "150px");
+	}else {
+			$("#carousel_9").css("height", "604px");
+	};*/
+
+}());
+
+
+</script>
+
+</body>
+</html>
